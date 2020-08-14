@@ -160,7 +160,7 @@ footer {
 .wheel {
   background-image: url('./images/interface/wheel.png');
   background-size: 70% 70%;
-  transition: transform 1s linear;
+  transition: transform 5s linear;
 }
 
 .plus {

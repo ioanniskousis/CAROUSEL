@@ -132,7 +132,8 @@ function timerControl() {
     }
     slideTo((currentIndex + timerDirection) % slides.length);
     const wheel = document.getElementById('wheel');
-    wheel.style.transform = "rotate(".concat((timerDirection * 30).toString().concat('deg')).concat(")");
+    wheel.style.transition = 'transform '.concat((5 * (TIMER_INTERVAL / 1000)).toString()).concat('s linear');
+    wheel.style.transform = "rotate(".concat((timerDirection * 360 * (TIMER_INTERVAL / 1000)).toString().concat('deg')).concat(")");
   }, TIMER_INTERVAL);
 }
 timer = timerControl();
