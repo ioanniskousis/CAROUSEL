@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  background-color: #333;
+  /* padding: 30px; */
+  margin: 0;
+  /* position: relative; */
+  box-sizing: border-box;
+  height: 100%;
+}
+
+main {
+  /* position: relative; */
+  background: #000;
+  width: 100%;
+  height: calc(100% - 30px);
+  color: #fff;
+  box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.3);
+  padding: 30px 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewer {
+  position: relative;
+  /* background-color: pink; */
+  width: 70vw;
+  height: 40vw;
+  overflow: hidden;
+  /* padding: 10px 0; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.slider {
+  position: absolute;
+  height: 100%;
+  width: 3500vw;
+  left: 0;
+  top: 0;
+  /* background-color: yellow; */
+  transition: left 0.5s ease-in-out;
+  /* display: none; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.slide {
+  /* background-color: white; */
+  width: 70vw;
+  height: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  /* left: 200px; */
+  height: 100%;
+  width: 100%;
+}
+
+.side-controller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  transition: all 200ms;
+  cursor: pointer;
+  background-color: rgba(30, 30, 30, 0.3);
+}
+
+.side-controller img {
+  opacity: 0.2;
+}
+
+.side-controller:hover {
+  opacity: 1;
+}
+
+.side-controller:active img {
+  opacity: 0.4;
+}
+
+.left-controller {
+  position: absolute;
+  left: 0;
+}
+
+.right-controller {
+  position: absolute;
+  right: 0;
+}
+
+footer {
+  background-color: #111;
+  bottom: 0;
+  height: 30px;
+  box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexButton {
+  width: 40px;
+  height: 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50% 40%;
+  background-image: url('./square.png');
+  opacity: 0.3;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.indexButton:hover {
+  opacity: 1;
+}
+
+.indexSelected {
+  background-image: url('./square-selected.png');
+  opacity: 0.8;
+}
