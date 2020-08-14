@@ -1,4 +1,4 @@
-function getSlides() {
+function slidesTB() {
   return [
     'photo1.jpeg',
     'photo2.jpeg',
@@ -9,10 +9,13 @@ function getSlides() {
     'photo7.jpg',
   ];
 }
-const TIMER_DIRECTION_FORWARD = 1;
-const TIMER_DIRECTION_BACKWARDS = -1;
+const slides = slidesTB();
 
-const slides = getSlides();
+TIMER_DIRECTION_FORWARD = 1;
+TIMER_DIRECTION_BACKWARDS = -1;
+TIMER_INTERVAL = 1000;
+
+let timer = null;
 let currentIndex = 0;
 let timerDirection = TIMER_DIRECTION_FORWARD;
 
@@ -25,7 +28,7 @@ function loadSlides() {
     const slide = document.createElement('div');
     slide.className = 'slide';
     const img = document.createElement('img');
-    img.setAttribute('src', './'.concat(element));
+    img.setAttribute('src', 'images/'.concat(element));
     slide.appendChild(img);
 
     slider.appendChild(slide);
@@ -87,16 +90,49 @@ function addListeners() {
       slideTo(currentIndex + 1);
     }
   });
+
+
+  document.getElementById('wheel').addEventListener('click', () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    } else {
+      timer = timerControl();
+    }
+  });
+
+  document.getElementById('minus').addEventListener('click', () => {
+    if (TIMER_INTERVAL > 1000) {
+      TIMER_INTERVAL -= 1000;
+      clearInterval(timer);
+      timer = timerControl();
+      if (TIMER_INTERVAL === 1000) {
+        document.getElementById('minus').style.opacity = 0.5;
+      }
+    }
+  });
+
+  document.getElementById('plus').addEventListener('click', () => {
+    TIMER_INTERVAL += 1000;
+    clearInterval(timer);
+    timer = timerControl();
+    document.getElementById('minus').style.opacity = 1;
+  });
 }
 
 loadSlides();
 addListeners();
 
-setInterval(() => {
-  if ((timerDirection === TIMER_DIRECTION_FORWARD) && (currentIndex === (slides.length - 1))) {
-    timerDirection = TIMER_DIRECTION_BACKWARDS;
-  } else if ((timerDirection === TIMER_DIRECTION_BACKWARDS) && (currentIndex === 0)) {
-    timerDirection = TIMER_DIRECTION_FORWARD;
-  }
-  slideTo((currentIndex + timerDirection) % slides.length);
-}, 1000);
+function timerControl() {
+  return setInterval(() => {
+    if ((timerDirection === TIMER_DIRECTION_FORWARD) && (currentIndex === (slides.length - 1))) {
+      timerDirection = TIMER_DIRECTION_BACKWARDS;
+    } else if ((timerDirection === TIMER_DIRECTION_BACKWARDS) && (currentIndex === 0)) {
+      timerDirection = TIMER_DIRECTION_FORWARD;
+    }
+    slideTo((currentIndex + timerDirection) % slides.length);
+    const wheel = document.getElementById('wheel');
+    wheel.style.transform = "rotate(".concat((timerDirection * 30).toString().concat('deg')).concat(")");
+  }, TIMER_INTERVAL);
+}
+timer = timerControl();

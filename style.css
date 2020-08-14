@@ -8,15 +8,12 @@ html {
 
 body {
   background-color: #333;
-  /* padding: 30px; */
   margin: 0;
-  /* position: relative; */
   box-sizing: border-box;
   height: 100%;
 }
 
 main {
-  /* position: relative; */
   background: #000;
   width: 100%;
   height: calc(100% - 30px);
@@ -31,14 +28,9 @@ main {
 
 .viewer {
   position: relative;
-  /* background-color: pink; */
   width: 70vw;
   height: 40vw;
   overflow: hidden;
-  /* padding: 10px 0; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .slider {
@@ -47,16 +39,13 @@ main {
   width: 3500vw;
   left: 0;
   top: 0;
-  /* background-color: yellow; */
   transition: left 0.5s ease-in-out;
-  /* display: none; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .slide {
-  /* background-color: white; */
   width: 70vw;
   height: 100%;
   padding: 0 5px;
@@ -124,7 +113,7 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 50% 40%;
-  background-image: url('./square.png');
+  background-image: url('./images/interface/square.png');
   opacity: 0.3;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -135,6 +124,58 @@ footer {
 }
 
 .indexSelected {
-  background-image: url('./square-selected.png');
+  background-image: url('./images/interface/square-selected.png');
   opacity: 0.8;
+}
+
+.topControlsContainer {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.minus,
+.wheel,
+.plus {
+  width: 40px;
+  height: 40px;
+  background-image: url('./images/interface/minus.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.minus {
+  background-image: url('./images/interface/minus.png');
+  background-size: 20% 20%;
+  opacity: 0.5;
+}
+
+.wheel {
+  background-image: url('./images/interface/wheel.png');
+  background-size: 70% 70%;
+  transition: transform 1s linear;
+}
+
+.plus {
+  background-image: url('./images/interface/plus.png');
+  background-size: 20% 20%;
+}
+
+.minus:hover,
+.wheel:hover,
+.plus:hover {
+  background-color: #777;
+}
+
+.minus:active,
+.wheel:active,
+.plus:active {
+  background-color: #999;
 }
