@@ -4,7 +4,7 @@ A simple Carousel Gadget that all it needs is an array of images' urls
 
 # Instructions To Use
 
-- Open fire index.js  
+- Open file index.js  
 
 - Notice that the fist 12 lines asign an array of urls to the variable *`slides`* - each url points to an image file    
 
