@@ -129,6 +129,7 @@ footer {
 }
 
 .topControlsContainer {
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 10px;
   left: calc(50% - 60px);
@@ -145,7 +146,6 @@ footer {
 .plus {
   width: 40px;
   height: 40px;
-  background-image: url('./images/interface/minus.png');
   background-position: center center;
   background-repeat: no-repeat;
   border-radius: 50%;
