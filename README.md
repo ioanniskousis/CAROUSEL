@@ -23,5 +23,8 @@ A simple Carousel Gadget that all it needs is an array of images' urls
       const slides = slidesTB();
     ```
 
-    - Make your program so the *`slidesTB`* function returns the desired collection of images to present
+    - Make your program so the *`slidesTB`* function returns the desired collection of images to present.   
+    
+    - Take care of the size of your images to fit the responsivenes of the window. (default ratio is 7/4).
+    
     
