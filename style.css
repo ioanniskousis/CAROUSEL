@@ -63,6 +63,7 @@ main {
 }
 
 .side-controller {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,12 +89,10 @@ main {
 }
 
 .left-controller {
-  position: absolute;
   left: 0;
 }
 
 .right-controller {
-  position: absolute;
   right: 0;
 }
 
